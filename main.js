@@ -17,3 +17,19 @@ c.fillRect(100,100,100,100);
 c.fillRect(100,500,100,100);
 c.strokeRect(400,100,100,100);
 // console.log(canvas);
+
+// creating ling
+c.beginPath();
+c.moveTo(50,50);
+c.lineTo(100,100);
+c.lineTo(200,200);
+c.lineTo(500,200);
+c.lineTo(500,400);
+c.strokeStyle="magenta";
+c.stroke();
+
+// creating arc
+
+c.beginPath()
+c.arc(150,550, 30, 0, Math.PI*3, false );
+c.stroke();
