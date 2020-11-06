@@ -33,3 +33,14 @@ c.stroke();
 c.beginPath()
 c.arc(150,550, 30, 0, Math.PI*3, false );
 c.stroke();
+
+for( var i = 0; i<=10; i++){
+    var x = Math.random()*window.innerWidth;
+    var y = Math.random()*window.innerHeight;
+    c.beginPath()
+    c.arc(x, y, 30, 0, Math.PI*3, false );
+    c.stroke();
+    c.fillStyle = "#f45de0";
+    c.fill();
+
+}
