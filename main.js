@@ -5,7 +5,6 @@
 // 4. Experiments
 
 
-console.log("whrer is this");
 var canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -34,15 +33,23 @@ c.beginPath()
 c.arc(150,550, 30, 0, Math.PI*3, false );
 c.stroke();
 
-for( var i = 0; i<=10; i++){
-    var x = Math.random()*window.innerWidth;
-    var y = Math.random()*window.innerHeight;
-    c.beginPath()
-    c.arc(x, y, 30, 0, Math.PI*3, false );
-    c.stroke();
-    c.fillStyle = "#f45de0";
-    c.fill();
+//Loop for 11 random circles on the canvas
 
-}
+// for( var i = 0; i<=10; i++){
+//     var x = Math.random()*window.innerWidth;
+//     var y = Math.random()*window.innerHeight;
+//     c.beginPath()
+//     c.arc(x, y, 30, 0, Math.PI*3, false );
+//     c.stroke();
+//     c.fillStyle = "#f45de0";
+//     c.fill();
+
+// }
 
 // ANimating the circle using canvas properties
+function animate(){
+    console.log("wer r they");
+    requestAnimationFrame(animate);
+
+}
+// animate();
