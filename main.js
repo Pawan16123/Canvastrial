@@ -29,9 +29,9 @@ c.stroke();
 
 // creating arc
 
-c.beginPath()
-c.arc(150,550, 30, 0, Math.PI*3, false );
-c.stroke();
+// c.beginPath()
+// c.arc(150,550, 30, 0, Math.PI*3, false );
+// c.stroke();
 
 //Loop for 11 random circles on the canvas
 
@@ -47,9 +47,21 @@ c.stroke();
 // }
 
 // ANimating the circle using canvas properties
+
+var y = 150;
+
 function animate(){
     console.log("wer r they");
-    requestAnimationFrame(animate);
+    // c.clearRect(0,0,innerHeight,innerWidth);
+    c.beginPath()
+    c.arc(150, y , 30, 0, Math.PI*3, false );
+    c.stroke();
+    if(y < 550){
+
+        y += 2;  
+        requestAnimationFrame(animate);
+    }
+    
 
 }
-// animate();
+animate();
