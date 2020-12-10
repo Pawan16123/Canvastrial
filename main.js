@@ -54,6 +54,7 @@ function animate(){
     console.log("wer r they");
     // c.clearRect(0,0,innerHeight,innerWidth);
     c.beginPath()
+    // falling circle 
     c.arc(150, y , 30, 0, Math.PI*3, false );
     c.stroke();
     if(y < 550){
