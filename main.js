@@ -58,7 +58,7 @@ function animate(){
     c.stroke();
     if(y < 550){
 
-        y += 2;  
+        y += 3;  
         requestAnimationFrame(animate);
     }
     
