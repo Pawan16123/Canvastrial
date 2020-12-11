@@ -62,6 +62,27 @@ function animate(){
         y += 3;  
         requestAnimationFrame(animate);
     }
+
+    
+
+}
+animate();
+
+var y = 550;
+
+function animate(){
+    console.log("wer r they");
+    // c.clearRect(0,0,innerHeight,innerWidth);
+    c.beginPath()
+    // falling circle 
+    c.arc(150, y , 30, 0, Math.PI*3, false );
+    c.stroke();
+    if(y < 850){
+
+        y += 3;  
+        requestAnimationFrame(animate);
+    }
+    
     
 
 }
