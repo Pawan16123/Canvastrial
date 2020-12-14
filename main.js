@@ -48,7 +48,7 @@ c.stroke();
 
 // ANimating the circle using canvas properties
 
-var y = 150;
+var y = 150, dy = 3;
 
 function animate(){
     console.log("wer r they");
@@ -57,11 +57,15 @@ function animate(){
     // falling circle 
     c.arc(150, y , 30, 0, Math.PI*3, false );
     c.stroke();
-    if(y < 550){
+    // if(y < 550){
 
-        y += 3;  
+        if(y > 550 || y <150){
+            dy = -dy;
+        }
+
+        y += dy;  
         requestAnimationFrame(animate);
-    }
+    // }
 
     
 
