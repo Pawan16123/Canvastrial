@@ -48,14 +48,14 @@ c.stroke();
 
 // ANimating the circle using canvas properties
 
-var y = 150, dy = 3;
+var y = 150, dy = Math.random()*10;
 
 function animate(){
     console.log("wer r they");
-    c.clearRect(119,150,400,400);
+    c.clearRect(119,150,70,400);
     c.beginPath()
     // falling circle 
-    c.arc(150, y , 30, 0, Math.PI*3, false );
+    c.arc(150, y , 30, 0, Math.PI*2, false );
     c.stroke();
     // if(y < 550){
 
@@ -72,3 +72,19 @@ function animate(){
 }
 animate();
 
+// using function constructor to create circle
+function Circle(x,y){
+    this.x =x;
+    this.y =y;
+    this.draw = function(){
+        console.log("console");
+        c.beginPath()
+        // falling circle 
+        c.arc(x, y , 40, 0, Math.PI*2, false );
+        c.stroke();
+        c.strokeStyle="blue"
+    }
+}
+
+var circle = new Circle(500,450);
+circle.draw();
