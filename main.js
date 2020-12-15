@@ -80,11 +80,14 @@ function Circle(x,y){
         console.log("console");
         c.beginPath()
         // falling circle 
-        c.arc(x, y , 40, 0, Math.PI*2, false );
+        c.arc(x, y , 45, 0, Math.PI*2, false );
         c.stroke();
-        c.strokeStyle="blue"
+        c.strokeStyle="red"
     }
 }
 
 var circle = new Circle(500,450);
 circle.draw();
+
+// Creating multiple circles using function constructor
+function Multicir(x,y)
