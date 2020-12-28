@@ -14,7 +14,19 @@ c.fillRect(320,150,80,80);
 c.fillRect(410,50,80,80);
 c.fillRect(0,0,400,400);
 
-c.moveTo(0,0);
+c.beginPath();
+c.moveTo(0,0);  
 c.lineTo(500,500);
+c.strokeStyle = "blue";
+c.stroke();
+
+c.beginPath();
+c.moveTo(90,100);
+c.lineTo(90,300);
+// c.strokeStyle = "orange";
+c.stroke();
+
+// c.beginPath();
+c.lineTo(400,300);
 c.strokeStyle = "red";
 c.stroke();
