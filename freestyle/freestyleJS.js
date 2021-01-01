@@ -53,7 +53,7 @@ function animate(){
     var r =Math.floor(Math.random()*255);
     var g =Math.floor(Math.random()*255);
     var b =Math.floor(Math.random()*255);
-    // c.clearRect(0,0,500,500);
+    c.clearRect(0,0,500,500);
 
     c.beginPath();
     c.arc(ran,rany, 30, 0, 6.48,false);
@@ -64,8 +64,8 @@ function animate(){
     c.beginPath();
     c.arc(ran2,rany, 30, 0, 6.48,false);
     // c.strokeStyle = "#"+color1+color;
-    c.strokeStyle = 'rgba('+r+','+ g+','+ b+','+ '1)';
-    // c.strokeStyle ="magenta";
+    // c.strokeStyle = 'rgba('+r+','+ g+','+ b+','+ '1)';
+    c.strokeStyle ="magenta";
     c.stroke();
 
     if(rany>466 || rany<34){
