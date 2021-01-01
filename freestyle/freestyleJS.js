@@ -40,13 +40,17 @@ function animate(){
 
     var ran = Math.random()*500;
     var rany = Math.random()*500;
+    var r =Math.floor(Math.random()*255);
+    var g =Math.floor(Math.random()*255);
+    var b =Math.floor(Math.random()*255);
 
     c.beginPath();
     c.arc(ran,rany, 30, 0, 6.48,false);
-    c.strokeStyle = "red";
+    // c.strokeStyle = "#"+color1+color;
+    c.strokeStyle = 'rgba('+r+','+ g+','+ b+','+ '1)';
     c.stroke();
 
-    if(circles<1000-1){
+    if(circles<100-1){
 
         requestAnimationFrame(animate);
         circles++
