@@ -39,7 +39,7 @@ var circles = 0;
 var dy = 3;
 var dx = 3;
 
-var ran = Math.floor(Math.random()*400);
+var ran = Math.floor(Math.random()*400 + 60);
 // var rany = Math.floor(Math.random()*400);
 var rany = 200;
 
@@ -48,7 +48,7 @@ function animate(){
     var r =Math.floor(Math.random()*255);
     var g =Math.floor(Math.random()*255);
     var b =Math.floor(Math.random()*255);
-    // c.clearRect(0,0,500,500);
+    c.clearRect(0,0,500,500);
 
     c.beginPath();
     c.arc(ran,rany, 30, 0, 6.48,false);
@@ -57,10 +57,10 @@ function animate(){
     c.strokeStyle ="magenta";
     c.stroke();
 
-    if(rany>350 || rany<100){
+    if(rany>466 || rany<34){
         dy = -dy;
     }
-    if(ran>350 || ran<100){
+    if(ran>466 || ran<34){
         dx = -dx;
     }
     requestAnimationFrame(animate);
