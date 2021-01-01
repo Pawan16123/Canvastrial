@@ -32,33 +32,27 @@ c.strokeStyle = "red";
 c.stroke();
 
 
-var x =0;
-var y = 0
+
+
+// for(xy=0; xy<10; xy++){
+var circles = 0;
 function animate(){
-//     console.log("wer r they");
-    c.clearRect(160,160,80,80);
-//     for(i=0; i<=100; i++){
+
+    var ran = Math.random()*500;
+    var rany = Math.random()*500;
+
     c.beginPath();
-    c.arc(y,200, 30, 0, x,false);
+    c.arc(ran,rany, 30, 0, 6.48,false);
     c.strokeStyle = "red";
     c.stroke();
-//     }
 
+    if(circles<1000-1){
 
-
-if(x<=(Math.PI*2)&&y==200){
-    //     console.log("done");
-    x +=0.1;
-}else{
-    x -=0.1; 
-    c.strokeStyle = "green";
-    c.stroke();  
+        requestAnimationFrame(animate);
+        circles++
+    }
+    
 }
 
-if(y<200){
-    y++;
-}
-requestAnimationFrame(animate);
 
-}
 animate();
