@@ -7,12 +7,12 @@ canvas.height=500;
 // magic c variable it's a super object it has tons of methods and functions that allows to do all the stuffs in canvas. 
 var c = canvas.getContext('2d');
 
-c.fillRect(50,50,80,80);
-c.fillRect(140,150,80,80);
-c.fillRect(230,50,80,80);
-c.fillRect(320,150,80,80);
-c.fillRect(410,50,80,80);
-c.fillRect(0,0,400,400);
+c.fillRect(00,00,80,80);
+c.fillRect(500,500,80,80);
+c.fillRect(0,420,80,80);
+c.fillRect(420,0,80,80);
+c.fillRect(420,420,80,80);
+// c.fillRect(0,0,400,400);
 
 c.beginPath();
 c.moveTo(0,0);  
@@ -36,25 +36,41 @@ c.stroke();
 
 // for(xy=0; xy<10; xy++){
 var circles = 0;
-function animate(){
+var dy = 3;
+var dx = 3;
 
-    var ran = Math.random()*500;
-    var rany = Math.random()*500;
+var ran = Math.floor(Math.random()*400);
+// var rany = Math.floor(Math.random()*400);
+var rany = 200;
+
+function animate(){
+    // var ran = Math.random()*500;
     var r =Math.floor(Math.random()*255);
     var g =Math.floor(Math.random()*255);
     var b =Math.floor(Math.random()*255);
+    // c.clearRect(0,0,500,500);
 
     c.beginPath();
     c.arc(ran,rany, 30, 0, 6.48,false);
     // c.strokeStyle = "#"+color1+color;
-    c.strokeStyle = 'rgba('+r+','+ g+','+ b+','+ '1)';
+    // c.strokeStyle = 'rgba('+r+','+ g+','+ b+','+ '1)';
+    c.strokeStyle ="magenta";
     c.stroke();
 
-    if(circles<100-1){
-
-        requestAnimationFrame(animate);
-        circles++
+    if(rany>350 || rany<100){
+        dy = -dy;
     }
+    if(ran>350 || ran<100){
+        dx = -dx;
+    }
+    requestAnimationFrame(animate);
+    rany+= dy;
+    ran+= dx;
+    // if(circles<100-1){
+
+    //     requestAnimationFrame(animate);
+    //     circles++
+    // }
     
 }
 
