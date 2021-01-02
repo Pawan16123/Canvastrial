@@ -168,13 +168,13 @@ function Newcir(a,b,da,db,radius,fillme){
 var cirArray = [];
 for(var i=0; i<=50; i++){
     
-     var radius = Math.floor(Math.random()*30+1);
-     var a = Math.floor(Math.random()*400+radius),
-     b = Math.floor(Math.random()*400+radius),
+     var radius = Math.random()*30+1;
+     var a = Math.random()*445+radius,
+     b = Math.random()*445+radius,
     //  var a = Math.floor(Math.random()*469+radius),
     //  b = Math.floor(Math.random()*469+radius),
-     da = Math.floor(Math.random()*3+1),
-     db = Math.floor(Math.random()*2+1);
+     da = (Math.random()-0.5)*10,
+     db = (Math.random()-0.5)*10;
 
      var r =Math.floor(Math.random()*255);
      var g =Math.floor(Math.random()*255);
