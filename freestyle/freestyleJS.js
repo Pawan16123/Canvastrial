@@ -54,7 +54,7 @@ function animate(){
     var r =Math.floor(Math.random()*255);
     var g =Math.floor(Math.random()*255);
     var b =Math.floor(Math.random()*255);
-    c.clearRect(0,0,500,500);
+    // c.clearRect(0,0,500,500);
 
     c.fillRect(150,150,200,200);
 
@@ -89,19 +89,14 @@ function animate(){
     ran2+= dx2;
     // radius +=dx;
     requestAnimationFrame(animate);
-    // if(circles<100-1){
 
-    //     requestAnimationFrame(animate);
-    //     circles++
-    // }
-    
 }
 
 
-animate();
+// animate();
 
-var dy22 = 1;
-var dx22 = 3;
+var dy22 = 2;
+var dx22 = 5;
 // var dxx= 2;
 // var dx2 = 1;
 var radius =  Math.floor(Math.random()*25+1);
@@ -131,4 +126,28 @@ function animate2(){
 }
 
 
-animate2();
+// animate2();
+
+function Newcir(a,b){
+    this.a = a;
+    this.b = b;
+
+    this.drawn = function(){
+        c.beginPath();
+        c.arc(a,b,30,0,Math.PI*2,false);
+        c.strokeStyle = 'orange';
+        c.stroke();
+        // console.log(c);
+    }
+}
+
+
+for(var i =0; i<10; i++){
+
+    var a =  Math.floor(Math.random()*400+50);
+    var b =  Math.floor(Math.random()*400+50);
+    
+    var firstCircle = new Newcir(a,b);
+    firstCircle.drawn();
+
+}
