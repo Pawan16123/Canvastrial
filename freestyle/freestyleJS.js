@@ -128,7 +128,7 @@ function animate2(){
 
 // animate2();
 
-function Newcir(a,b,da,db,radius){
+function Newcir(a,b,da,db,radius,fillme){
     this.a = a;
     this.b = b;
     this.da = da;
@@ -140,6 +140,8 @@ function Newcir(a,b,da,db,radius){
         c.arc(this.a,this.b,this.radius,0,Math.PI*2,false);
         c.strokeStyle = 'magenta';
         c.stroke();
+        c.fill();
+        c.fillStyle = fillme;
         // console.log(c);
     }
     this.update = function(){
@@ -171,8 +173,14 @@ for(var i=0; i<=50; i++){
      da = Math.floor(Math.random()*3+1),
      db = Math.floor(Math.random()*2+1);
      radius = Math.floor(Math.random()*30+1);
+
+     var r =Math.floor(Math.random()*255);
+     var g =Math.floor(Math.random()*255);
+     var b =Math.floor(Math.random()*255);
+
+     fillme= 'rgba('+r+','+ g+','+ b+','+ '1)';
      
-     firstCircle1 = new Newcir(a,b,da,db,radius);
+     firstCircle1 = new Newcir(a,b,da,db,radius,fillme);
      cirArray.push(firstCircle1);
 }
 console.log(cirArray);
