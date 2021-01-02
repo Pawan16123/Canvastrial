@@ -40,6 +40,7 @@ var dy = 3;
 var dx = 3;
 var dxx= 2;
 var dx2 = 1;
+var radius =  Math.floor(Math.random()*25+1);
 
 var ran = Math.floor(Math.random()*400 + 60);
 var ran1 = Math.floor(Math.random()*400 + 60);
@@ -55,35 +56,38 @@ function animate(){
     var b =Math.floor(Math.random()*255);
     c.clearRect(0,0,500,500);
 
+    c.fillRect(150,150,200,200);
+
     c.beginPath();
-    c.arc(ran,rany, 30, 0, 6.48,false);
+    c.arc(ran,rany, radius, 0, 6.48,false);
     c.stroke();
     c.beginPath();
-    c.arc(ran1,rany, 30, 0, 6.48,false);
+    c.arc(ran1,rany, radius, 0, 6.48,false);
     c.stroke();
     c.beginPath();
-    c.arc(ran2,rany, 30, 0, 6.48,false);
+    c.arc(ran2,rany, radius, 0, 6.48,false);
     // c.strokeStyle = "#"+color1+color;
     // c.strokeStyle = 'rgba('+r+','+ g+','+ b+','+ '1)';
     c.strokeStyle ="magenta";
     c.stroke();
 
-    if(rany>466 || rany<34){
+    if(rany>500-radius || rany<(0+radius)){
         dy = -dy;
     }
-    if(ran1>466 || ran1<34){
+    if(ran1>500-radius || ran1<(150+radius)){
         dxx = -dxx;
     }
-    if(ran2>466  || ran2<34){
+    if(ran2>500-radius  || ran2<(0+radius)){
         dx2 = -dx2;
     }
-    if(ran>466 || ran<34){
+    if(ran>500-radius || ran<(0+radius)){
         dx = -dx;
     }
     rany+= dy;
     ran+= dx;
     ran1+= dxx;
     ran2+= dx2;
+    // radius +=dx;
     requestAnimationFrame(animate);
     // if(circles<100-1){
 
@@ -95,3 +99,36 @@ function animate(){
 
 
 animate();
+
+var dy22 = 1;
+var dx22 = 3;
+// var dxx= 2;
+// var dx2 = 1;
+var radius =  Math.floor(Math.random()*25+1);
+
+var ran22 = Math.floor(Math.random()*50 + 300);
+var rany22 = 150+radius;
+
+function animate2(){
+
+    c.beginPath();
+    c.arc(ran22,rany22, radius, 0, 6.48,false);
+    c.stroke();
+    c.strokeStyle ="red";
+    c.stroke();
+
+    if(rany22>350-radius || rany22<(150+radius)){
+        dy22 = -dy22;
+    }
+    
+    if(ran22>350-radius || ran22<(150+radius)){
+        dx22 = -dx22;
+    }
+    rany22+= dy22;
+    ran22+= dx22;
+    requestAnimationFrame(animate2);
+    
+}
+
+
+animate2();
