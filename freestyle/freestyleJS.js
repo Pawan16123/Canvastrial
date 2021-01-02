@@ -43,7 +43,7 @@ var dx2 = 1;
 var radius =  Math.floor(Math.random()*25+1);
 
 var ran = Math.floor(Math.random()*400 + 60);
-var ran1 = Math.floor(Math.random()*400 + 60);
+var ran1 = Math.floor(Math.random()*130+370);
 var ran2 = Math.floor(Math.random()*400 + 60);
 console.log(ran,ran1,ran2);
 // var rany = Math.floor(Math.random()*400);
@@ -74,7 +74,7 @@ function animate(){
     if(rany>500-radius || rany<(0+radius)){
         dy = -dy;
     }
-    if(ran1>500-radius || ran1<(150+radius)){
+    if(ran1>500-radius || ran1<(150+radius) || ran1<(350+radius)){
         dxx = -dxx;
     }
     if(ran2>500-radius  || ran2<(0+radius)){
