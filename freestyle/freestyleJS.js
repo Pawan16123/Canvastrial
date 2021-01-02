@@ -128,26 +128,71 @@ function animate2(){
 
 // animate2();
 
-function Newcir(a,b){
+function Newcir(a,b,da,db,radius){
     this.a = a;
     this.b = b;
+    this.da = da;
+    this.db = db;
+    this.radius = radius;
 
     this.drawn = function(){
         c.beginPath();
-        c.arc(a,b,30,0,Math.PI*2,false);
-        c.strokeStyle = 'orange';
+        c.arc(this.a,this.b,this.radius,0,Math.PI*2,false);
+        c.strokeStyle = 'magenta';
         c.stroke();
         // console.log(c);
     }
+    this.update = function(){
+        if(this.a>450-this.radius || this.a<(10+this.radius)){
+            this.da = -this.da;
+        }
+        
+        if(this.b>450-this.radius || this.b<(10+this.radius)){
+            this.db = -this.db;
+        }
+        
+        this.a+= this.da;
+        this.b+= this.db;
+        this.drawn();
+    }
+
+
 }
 
 
-for(var i =0; i<10; i++){
-
-    var a =  Math.floor(Math.random()*400+50);
-    var b =  Math.floor(Math.random()*400+50);
+// var a = Math.floor(Math.random()*450+20);
+// var b = Math.floor(Math.random()*450+20);
+// var firstCircle = new Newcir(a,b,2,3,20);
+var cirArray = [];
+for(var i=0; i<=50; i++){
     
-    var firstCircle = new Newcir(a,b);
-    firstCircle.drawn();
+     var a = Math.floor(Math.random()*450+20),
+     b = Math.floor(Math.random()*450+20),
+     da = Math.floor(Math.random()*5+1),
+     db = Math.floor(Math.random()*8+1);
+     radius = Math.floor(Math.random()*30+1);
+     
+     firstCircle1 = new Newcir(a,b,da,db,radius);
+     cirArray.push(firstCircle1);
+}
+console.log(cirArray);
+
+
+function animate5(){
+    requestAnimationFrame(animate5);
+
+    // var a =  Math.floor(Math.random()*400+50);
+    // var b =  Math.floor(Math.random()*400+50);
+    c.clearRect(0,0,500,500)
+    
+    // firstCircle.update();
+    for(var i=0; i<cirArray.length; i++){
+    
+        cirArray[i].update();
+   }
 
 }
+
+animate5();
+
+
