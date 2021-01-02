@@ -1,13 +1,8 @@
-html,body{
+body{
+    text-align: center;
+}
+canvas{
+    background-color: paleturquoise;
     /* height: 100%;
     width: 100%; */
-    margin: 0;
-    padding: 0;
-}
-    
-    
-canvas{
-border: 1px solid greenyellow;
-/* height: 99%;
-width: 99%; */
 }
