@@ -1,6 +1,6 @@
 // console.log("connected?");
 var canvas = document.querySelector("canvas");
-canvas.width =500;
+canvas.width =1000;
 canvas.height=500;
 
 
@@ -145,11 +145,11 @@ function Newcir(a,b,da,db,radius,fillme){
         // console.log(c);
     }
     this.update = function(){
-        if(this.a+this.radius>500 || this.a - this.radius<0){
+        if(this.a+this.radius>canvas.width || this.a - this.radius<0){
             this.da = -this.da;
         }
         
-        if(this.b+this.radius>500|| this.b - this.radius<0){
+        if(this.b+this.radius>canvas.height|| this.b - this.radius<0){
             this.db = -this.db;
         }
         
@@ -166,15 +166,15 @@ function Newcir(a,b,da,db,radius,fillme){
 // var b = Math.floor(Math.random()*450+20);
 // var firstCircle = new Newcir(a,b,2,3,20);
 var cirArray = [];
-for(var i=0; i<=50; i++){
+for(var i=0; i<=500; i++){
     
      var radius = Math.random()*30+1;
      var a = Math.random()*(500-radius*2)+radius,
      b = Math.random()*(500-radius*2)+radius,
     //  var a = Math.floor(Math.random()*469+radius),
     //  b = Math.floor(Math.random()*469+radius),
-     da = (Math.random()-0.5)*10,
-     db = (Math.random()-0.5)*10;
+     da = (Math.random()-0.5)*7,
+     db = (Math.random()-0.5)*7;
 
      var r =Math.floor(Math.random()*255);
      var g =Math.floor(Math.random()*255);
@@ -194,7 +194,8 @@ function animate5(){
 
     // var a =  Math.floor(Math.random()*400+50);
     // var b =  Math.floor(Math.random()*400+50);
-    c.clearRect(0,0,500,500);
+    // c.clearRect(0,0,canvas.width,canvas.height);
+    c.clearRect(0,0,500,canvas.height);
     
     // firstCircle.update();
     for(var i=0; i<cirArray.length; i++){
