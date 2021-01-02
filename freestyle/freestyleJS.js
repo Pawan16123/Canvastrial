@@ -169,8 +169,8 @@ var cirArray = [];
 for(var i=0; i<=50; i++){
     
      var radius = Math.random()*30+1;
-     var a = Math.random()*445+radius,
-     b = Math.random()*445+radius,
+     var a = Math.random()*(500-radius*2)+radius,
+     b = Math.random()*(500-radius*2)+radius,
     //  var a = Math.floor(Math.random()*469+radius),
     //  b = Math.floor(Math.random()*469+radius),
      da = (Math.random()-0.5)*10,
