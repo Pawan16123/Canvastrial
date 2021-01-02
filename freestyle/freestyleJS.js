@@ -138,18 +138,18 @@ function Newcir(a,b,da,db,radius,fillme){
     this.drawn = function(){
         c.beginPath();
         c.arc(this.a,this.b,this.radius,0,Math.PI*2,false);
-        c.strokeStyle = 'magenta';
+        c.strokeStyle = 'orange';
         c.stroke();
         c.fill();
         c.fillStyle = fillme;
         // console.log(c);
     }
     this.update = function(){
-        if(this.a>450-this.radius || this.a<(20+this.radius)){
+        if(this.a+this.radius>500 || this.a - this.radius<0){
             this.da = -this.da;
         }
         
-        if(this.b>450-this.radius || this.b<(20+this.radius)){
+        if(this.b+this.radius>500|| this.b - this.radius<0){
             this.db = -this.db;
         }
         
@@ -168,17 +168,20 @@ function Newcir(a,b,da,db,radius,fillme){
 var cirArray = [];
 for(var i=0; i<=50; i++){
     
-     var a = Math.floor(Math.random()*450+20),
-     b = Math.floor(Math.random()*450+20),
+     var radius = Math.floor(Math.random()*30+1);
+     var a = Math.floor(Math.random()*400+radius),
+     b = Math.floor(Math.random()*400+radius),
+    //  var a = Math.floor(Math.random()*469+radius),
+    //  b = Math.floor(Math.random()*469+radius),
      da = Math.floor(Math.random()*3+1),
      db = Math.floor(Math.random()*2+1);
-     radius = Math.floor(Math.random()*30+1);
 
      var r =Math.floor(Math.random()*255);
      var g =Math.floor(Math.random()*255);
-     var b =Math.floor(Math.random()*255);
+     var bb =Math.floor(Math.random()*255);
 
-     fillme= 'rgba('+r+','+ g+','+ b+','+ '1)';
+     fillme= 'rgba('+r+','+ g+','+ bb+','+ '1)';
+     console.log(fillme);
      
      firstCircle1 = new Newcir(a,b,da,db,radius,fillme);
      cirArray.push(firstCircle1);
@@ -191,7 +194,7 @@ function animate5(){
 
     // var a =  Math.floor(Math.random()*400+50);
     // var b =  Math.floor(Math.random()*400+50);
-    c.clearRect(0,0,500,500)
+    c.clearRect(0,0,500,500);
     
     // firstCircle.update();
     for(var i=0; i<cirArray.length; i++){
@@ -202,5 +205,8 @@ function animate5(){
 }
 
 animate5();
+
+// c.arc(50,50,48,0,6.48,false);
+// c.stroke()
 
 
