@@ -143,11 +143,11 @@ function Newcir(a,b,da,db,radius){
         // console.log(c);
     }
     this.update = function(){
-        if(this.a>450-this.radius || this.a<(10+this.radius)){
+        if(this.a>450-this.radius || this.a<(20+this.radius)){
             this.da = -this.da;
         }
         
-        if(this.b>450-this.radius || this.b<(10+this.radius)){
+        if(this.b>450-this.radius || this.b<(20+this.radius)){
             this.db = -this.db;
         }
         
@@ -168,8 +168,8 @@ for(var i=0; i<=50; i++){
     
      var a = Math.floor(Math.random()*450+20),
      b = Math.floor(Math.random()*450+20),
-     da = Math.floor(Math.random()*5+1),
-     db = Math.floor(Math.random()*8+1);
+     da = Math.floor(Math.random()*3+1),
+     db = Math.floor(Math.random()*2+1);
      radius = Math.floor(Math.random()*30+1);
      
      firstCircle1 = new Newcir(a,b,da,db,radius);
