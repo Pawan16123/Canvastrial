@@ -1,7 +1,7 @@
 // console.log("connected?");
 var canvas = document.querySelector("canvas");
-canvas.width =1000;
-canvas.height=500;
+canvas.width =innerWidth-20;
+canvas.height=innerHeight-20;
 
 
 // magic c variable it's a super object it has tons of methods and functions that allows to do all the stuffs in canvas. 
@@ -179,8 +179,9 @@ for(var i=0; i<=500; i++){
      var r =Math.floor(Math.random()*255);
      var g =Math.floor(Math.random()*255);
      var bb =Math.floor(Math.random()*255);
+     var aa =Math.random();
 
-     fillme= 'rgba('+r+','+ g+','+ bb+','+ '1)';
+     fillme= 'rgba('+r+','+ g+','+ bb+','+ aa +')';
      console.log(fillme);
      
      firstCircle1 = new Newcir(a,b,da,db,radius,fillme);
@@ -195,7 +196,7 @@ function animate5(){
     // var a =  Math.floor(Math.random()*400+50);
     // var b =  Math.floor(Math.random()*400+50);
     // c.clearRect(0,0,canvas.width,canvas.height);
-    c.clearRect(0,0,500,canvas.height);
+    c.clearRect(0,0,canvas.width/2,canvas.height);
     
     // firstCircle.update();
     for(var i=0; i<cirArray.length; i++){
@@ -207,6 +208,15 @@ function animate5(){
 
 animate5();
 
+var mouse = {
+    x:0,
+    y:0
+}
+canvas.addEventListener("mousemove",function(event){
+    mouse.x = event.x;
+    mouse.y = event.y;
+    console.log(mouse);
+})
 // c.arc(50,50,48,0,6.48,false);
 // c.stroke()
 
