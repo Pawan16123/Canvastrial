@@ -172,12 +172,12 @@ function Newcir(a,b,da,db,radius,fillme){
             if(this.radius<80){
                 this.radius ++;
             }
-        }else if(mouse.x - this.a > 50 && mouse.y - this.b > 50){
+        }else if(this.radius>10){
             console.log("Greater than");
-            if(this.radius>8){
+            // if(this.radius>8){
 
                 this.radius--;
-            }
+            // }
         }
 
         this.drawn();
@@ -191,7 +191,7 @@ function Newcir(a,b,da,db,radius,fillme){
 // var b = Math.floor(Math.random()*450+20);
 // var firstCircle = new Newcir(a,b,2,3,20);
 var cirArray = [];
-for(var i=0; i<=100; i++){
+for(var i=0; i<=900; i++){
     
      var radius = Math.random()*30+1;
      var a = Math.random()*(500-radius*2)+radius,
@@ -221,7 +221,7 @@ function animate5(){
     // var a =  Math.floor(Math.random()*400+50);
     // var b =  Math.floor(Math.random()*400+50);
     // c.clearRect(0,0,canvas.width,canvas.height);
-    c.clearRect(0,0,canvas.width/2,canvas.height);
+    c.clearRect(0,0,canvas.width,canvas.height);
     
     // firstCircle.update();
     for(var i=0; i<cirArray.length; i++){
