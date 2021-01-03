@@ -128,6 +128,16 @@ function animate2(){
 
 // animate2();
 
+var mouse = {
+    x:0,
+    y:0
+}
+canvas.addEventListener("mousemove",function(event){
+    mouse.x = event.x;
+    mouse.y = event.y;
+    // console.log(mouse);
+});
+
 function Newcir(a,b,da,db,radius,fillme){
     this.a = a;
     this.b = b;
@@ -155,6 +165,21 @@ function Newcir(a,b,da,db,radius,fillme){
         
         this.a+= this.da;
         this.b+= this.db;
+
+        // Interaction with the mouse.
+        if(mouse.x - this.a < 50 && mouse.x - this.a>-50 && mouse.y - this.b < 50 && mouse.y - this.b > -50 ){
+            console.log("smaller than");
+            if(this.radius<80){
+                this.radius ++;
+            }
+        }else if(mouse.x - this.a > 50 && mouse.y - this.b > 50){
+            console.log("Greater than");
+            if(this.radius>8){
+
+                this.radius--;
+            }
+        }
+
         this.drawn();
     }
 
@@ -166,11 +191,11 @@ function Newcir(a,b,da,db,radius,fillme){
 // var b = Math.floor(Math.random()*450+20);
 // var firstCircle = new Newcir(a,b,2,3,20);
 var cirArray = [];
-for(var i=0; i<=500; i++){
+for(var i=0; i<=100; i++){
     
      var radius = Math.random()*30+1;
      var a = Math.random()*(500-radius*2)+radius,
-     b = Math.random()*(500-radius*2)+radius,
+     b = Math.random()*(canvas.height-radius*2)+radius,
     //  var a = Math.floor(Math.random()*469+radius),
     //  b = Math.floor(Math.random()*469+radius),
      da = (Math.random()-0.5)*7,
@@ -179,7 +204,7 @@ for(var i=0; i<=500; i++){
      var r =Math.floor(Math.random()*255);
      var g =Math.floor(Math.random()*255);
      var bb =Math.floor(Math.random()*255);
-     var aa =Math.random();
+     var aa =Math.random()+0.2;
 
      fillme= 'rgba('+r+','+ g+','+ bb+','+ aa +')';
      console.log(fillme);
@@ -208,15 +233,7 @@ function animate5(){
 
 animate5();
 
-var mouse = {
-    x:0,
-    y:0
-}
-canvas.addEventListener("mousemove",function(event){
-    mouse.x = event.x;
-    mouse.y = event.y;
-    console.log(mouse);
-})
+
 // c.arc(50,50,48,0,6.48,false);
 // c.stroke()
 
