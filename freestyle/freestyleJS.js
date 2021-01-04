@@ -138,12 +138,16 @@ canvas.addEventListener("mousemove",function(event){
     // console.log(mouse);
 });
 
+var minRadii = 10,
+    maxRadii = 50;
+
 function Newcir(a,b,da,db,radius,fillme){
     this.a = a;
     this.b = b;
     this.da = da;
     this.db = db;
     this.radius = radius;
+    this.minRadius = radius;
 
     this.drawn = function(){
         c.beginPath();
@@ -169,10 +173,10 @@ function Newcir(a,b,da,db,radius,fillme){
         // Interaction with the mouse.
         if(mouse.x - this.a < 50 && mouse.x - this.a>-50 && mouse.y - this.b < 50 && mouse.y - this.b > -50 ){
             console.log("smaller than");
-            if(this.radius<80){
+            if(this.radius<maxRadii){
                 this.radius ++;
             }
-        }else if(this.radius>10){
+        }else if(this.radius>this.minRadius){
             console.log("Greater than");
             // if(this.radius>8){
 
@@ -191,9 +195,9 @@ function Newcir(a,b,da,db,radius,fillme){
 // var b = Math.floor(Math.random()*450+20);
 // var firstCircle = new Newcir(a,b,2,3,20);
 var cirArray = [];
-for(var i=0; i<=900; i++){
+for(var i=0; i<=600; i++){
     
-     var radius = Math.random()*30+1;
+     var radius = Math.random()*3+1;
      var a = Math.random()*(500-radius*2)+radius,
      b = Math.random()*(canvas.height-radius*2)+radius,
     //  var a = Math.floor(Math.random()*469+radius),
@@ -221,7 +225,7 @@ function animate5(){
     // var a =  Math.floor(Math.random()*400+50);
     // var b =  Math.floor(Math.random()*400+50);
     // c.clearRect(0,0,canvas.width,canvas.height);
-    c.clearRect(0,0,canvas.width,canvas.height);
+    c.clearRect(0,0,canvas.width/2,canvas.height);
     
     // firstCircle.update();
     for(var i=0; i<cirArray.length; i++){
