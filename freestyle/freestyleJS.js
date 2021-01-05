@@ -197,7 +197,7 @@ function Newcir(a,b,da,db,radius,fillme){
 var cirArray = [];
 for(var i=0; i<=600; i++){
     
-     var radius = Math.random()*3+1;
+     var radius = Math.random()*8+1;
      var a = Math.random()*(500-radius*2)+radius,
      b = Math.random()*(canvas.height-radius*2)+radius,
     //  var a = Math.floor(Math.random()*469+radius),
