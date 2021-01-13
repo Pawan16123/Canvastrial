@@ -13,7 +13,7 @@ const mouse = {
 }
 var gravity = 1;
 var friction = 0.98;
-const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66',"red","green", "orange"];
 
 // Event Listeners
 addEventListener('mousemove', (event) => {
