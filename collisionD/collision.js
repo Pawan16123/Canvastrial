@@ -58,21 +58,23 @@ class Object {
 
     hypotenuse = Math.floor(Math.hypot((firstCircle.x-mouse.x),(firstCircle.y-mouse.y)));
 
-    c.beginPath();
-    c.moveTo(firstCircle.x , firstCircle.y);
-    c.lineTo(mouse.x, firstCircle.y);
-    c.strokeStyle="orange";
-    c.stroke();
+    // c.beginPath();
+    // c.moveTo(firstCircle.x , firstCircle.y);
+    // c.lineTo(mouse.x, firstCircle.y);
+    // c.strokeStyle="orange";
+    // c.stroke();
 
-    c.beginPath();
-    c.moveTo(mouse.x , mouse.y);
-    c.lineTo(mouse.x, firstCircle.y);
-    c.strokeStyle="green";
-    c.stroke();
+    // c.beginPath();
+    // c.moveTo(mouse.x , mouse.y);
+    // c.lineTo(mouse.x, firstCircle.y);
+    // c.strokeStyle="green";
+    // c.stroke();
     // console.log(hypotenuse);
 
     if(hypotenuse <= 70 ){
       this.color = "red";
+      // mouse.x += mouse.x+10;
+      // mouse.y += mouse.y+10;
     }else{
       this.color  = "green";
     }
